@@ -6,10 +6,6 @@ import Hero from "./Hero";
 import Domain from "./Domain";
 
 const LandingPage = () => {
-  const router = useRouter();
-
-  
-
   return (
     <main className="p-4 pt-2 text-white font-roboto space-y-12">
       {/* Header */}
