@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div className="bg-black/50 rounded-[6rem] py-24 md:py-32 lg:py-40 px-4 md:px-8 lg:px-12 relative">
+    <div className="bg-black/50 rounded-[6rem] py-24 md:py-32 lg:py-40 px-4 md:px-8 lg:px-12 relative" id="aboout-us">
       <div className="max-w-7xl w-full flex flex-col lg:flex-row items-center justify-between mx-auto gap-8 lg:gap-16">
         {/* Logo Section */}
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
