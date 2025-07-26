@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import Header from "./Header";
 import Hero from "./Hero";
 import Domain from "./Domain";
+import Events from "./Events";
+import Contact from "./Contact";
 
 const LandingPage = () => {
   return (
@@ -17,18 +19,10 @@ const LandingPage = () => {
       <Domain />
 
       {/* Events Section */}
-      <section className="container-glow p-6" id="events">
-        <h2 className="text-2xl font-bold mb-4">EVENTS</h2>
-        <div className="bg-black bg-opacity-40 rounded-xl h-48"></div>
-        <div className="text-right text-xs text-gray-400 mt-2">SHOW MORE</div>
-      </section>
+      <Events />
 
       {/* Contact Section */}
-      <section className="container-glow p-6" id="contact-us">
-        <h2 className="text-2xl font-bold mb-4">CONTACT US</h2>
-        <div className="bg-black bg-opacity-40 rounded-xl h-32"></div>
-        <div className="text-right text-xs text-gray-400 mt-2">SHOW MORE</div>
-      </section>
+      <Contact />
     </main>
   );
 };

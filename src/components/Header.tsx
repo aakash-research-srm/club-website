@@ -2,22 +2,37 @@ import React from "react";
 
 export default function Header() {
   return (
-    <header className="w-full bg-slate-800 rounded-full px-6 py-3 text-xs flex items-center justify-center">
+    <header className="w-full bg-[#252525] rounded-full px-6 py-3 text-xs flex items-center justify-center">
       <div className="flex w-full max-w-3xl items-center justify-between">
         <nav className="flex items-center justify-between w-full">
-          <a className="text-white font-medium hover:text-gray-300 transition-colors" href="#about-us">
+          <a
+            className="text-white font-medium hover:text-gray-300 transition-colors"
+            href="#about-us"
+          >
             ABOUT US
           </a>
-          <a className="text-gray-400 font-medium hover:text-white transition-colors" href="#projects">
-            PROJECTS
-          </a>
-          <a className="text-gray-400 font-medium hover:text-white transition-colors" href="#events">
-            EVENTS
-          </a>
-          <a className="text-gray-400 font-medium hover:text-white transition-colors" href="#domains">
+          <a
+            className="text-gray-400 font-medium hover:text-white transition-colors"
+            href="#domains"
+          >
             DOMAINS
           </a>
-          <a className="text-gray-400 font-medium hover:text-white transition-colors" href="#contact-us">
+          <a
+            className="text-gray-400 font-medium hover:text-white transition-colors"
+            href="#events"
+          >
+            EVENTS
+          </a>
+          <a
+            className="text-gray-400 font-medium hover:text-white transition-colors"
+            href="#projects"
+          >
+            PROJECTS
+          </a>
+          <a
+            className="text-gray-400 font-medium hover:text-white transition-colors"
+            href="#contact-us"
+          >
             CONTACT US
           </a>
           {/* <button className="text-gray-400 hover:text-white transition-colors">

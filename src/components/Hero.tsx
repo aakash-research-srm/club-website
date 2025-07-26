@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="bg-black/50 rounded-[6rem] py-24 md:py-32 lg:py-40 px-4 md:px-8 lg:px-12 relative" id="aboout-us">
+    <div className="mt-20 bg-black/50 rounded-[6rem] py-24 md:py-32 lg:py-40 px-4 md:px-8 lg:px-12 relative" id="aboout-us">
       <div className="w-full md:max-w-7xl flex flex-col lg:flex-row items-center justify-around mx-auto gap-8 lg:gap-16">
         {/* Logo Section */}
         <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-start">
