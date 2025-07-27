@@ -40,7 +40,7 @@ export default function Domain() {
       className="bg-black/40 rounded-[6rem] py-16 px-4 md:px-8"
       id="domains"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="md:max-w-7xl mx-auto">
         <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 tracking-wider">
           DOMAINS
         </h2>

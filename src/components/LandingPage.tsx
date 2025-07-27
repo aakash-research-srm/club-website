@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { useRouter } from "next/navigation";
 import Header from "./Header";
 import Hero from "./Hero";
 import Domain from "./Domain";

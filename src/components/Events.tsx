@@ -27,44 +27,36 @@ export default function Events() {
 
   const events = [
     {
-      title: "Tech Workshop 2025",
-      date: "March 15, 2025",
+      title: "Hack & Beyond Hackathon",
+      date: "August 13, 2025",
       description:
-        "Hands-on workshop covering latest technologies in AI and Machine Learning.",
-      gradient: "from-gray-900 via-black to-gray-800",
-      textOverlay: "bloom",
-    },
-    {
-      title: "Hackathon Championship",
-      date: "April 20, 2025",
-      description:
-        "48-hour coding marathon with exciting prizes and networking opportunities.",
+        "24-hour hybrid hackathon with online idea pitching and on-campus prototyping. Theme: Electronics & IOT.",
       gradient: "from-black via-gray-900 to-gray-800",
-      textOverlay: "vivid",
+      image: "/events/hack-n-beyond-1.jpg",
     },
     {
-      title: "Research Symposium",
-      date: "May 10, 2025",
+      title: "Hack & Beyond Workshop",
+      date: "11-12 August 2025",
       description:
-        "Academic conference showcasing cutting-edge research in technology.",
-      gradient: "from-gray-800 via-black to-gray-900",
-      textOverlay: "petales",
+        "A 2-day hands-on workshop with industry experts to gear you up with tools, tech, and confidence to build real-world solutions. Venue: JC Bose Hall, SRMIST.",
+      gradient: "from-gray-900 via-black to-gray-800",
+      image: "/events/hack-n-beyond-2.jpg",
     },
     {
-      title: "Industry Meet",
-      date: "June 5, 2025",
+      title: "Hack & Beyond Hackathon",
+      date: "August 13, 2025",
       description:
-        "Network with industry professionals and explore career opportunities.",
-      gradient: "from-slate-900 via-black to-gray-900",
-      textOverlay: "connect",
+        "24-hour hybrid hackathon with online idea pitching and on-campus prototyping. Theme: Electronics & IOT.",
+      gradient: "from-gray-900 via-black to-gray-800",
+      image: "/events/hack-n-beyond-1.jpg",
     },
     {
-      title: "Innovation Expo",
-      date: "July 18, 2025",
+      title: "Hack & Beyond Workshop",
+      date: "11-12 August 2025",
       description:
-        "Showcase of innovative projects and startup ideas from students.",
-      gradient: "from-gray-900 via-black to-slate-900",
-      textOverlay: "innovate",
+        "A 2-day hands-on workshop with industry experts to gear you up with tools, tech, and confidence to build real-world solutions. Venue: JC Bose Hall, SRMIST.",
+      gradient: "from-gray-900 via-black to-gray-800",
+      image: "/events/hack-n-beyond-2.jpg",
     },
   ];
 
@@ -133,7 +125,7 @@ export default function Events() {
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
-      <div className="max-w-7xl w-full mx-auto">
+      <div className="md:max-w-7xl w-full mx-auto">
         {/* Title */}
         <h2 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-center mb-16 md:mb-24 tracking-wider">
           EVENTS
@@ -142,7 +134,7 @@ export default function Events() {
         {/* Carousel Container */}
         <div className="relative flex items-center justify-center min-h-[350px] sm:min-h-[400px] md:min-h-[500px]">
           <div className="flex items-center justify-center w-full relative px-4 sm:px-8 md:px-0">
-            {getVisibleEvents().map((event, index) => {
+            {getVisibleEvents().map((event) => {
               const { scale, spacing, rotation } = getResponsiveValues();
 
               return (
@@ -200,28 +192,38 @@ export default function Events() {
                     whileHover={event.position === 0 ? { scale: 1.02 } : {}}
                     transition={{ duration: 0.3 }}
                   >
-                    {/* Gradient Background - Always visible */}
+                    {/* Background Image */}
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-90`}
+                      className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                      style={{
+                        backgroundImage: `url(${event.image})`,
+                      }}
+                    />
+
+                    {/* Gradient Background Overlay - Blends with image */}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-80`}
                     >
                       {/* Decorative Elements */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/10"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-white/10"></div>
                       <div className="absolute top-2 sm:top-4 right-2 sm:right-4 w-12 sm:w-16 md:w-20 h-12 sm:h-16 md:h-20 bg-white/10 rounded-full blur-xl"></div>
                       <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-2 sm:left-4 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 bg-white/20 rounded-full blur-lg"></div>
                     </div>
 
-                    {/* Large Text Overlay - Always visible */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <h2
-                        className={`text-white font-bold text-center leading-none opacity-30 ${
-                          event.position === 0
-                            ? "text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
-                            : "text-xl sm:text-2xl md:text-3xl lg:text-4xl"
-                        }`}
-                      >
-                        {event.textOverlay}
-                      </h2>
-                    </div>
+                    {/* Large Text Overlay - Only visible for side cards */}
+                    {event.position !== 0 && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <h2
+                          className={`text-white font-bold text-center leading-none opacity-30 px-4 ${
+                            event.position === 0
+                              ? "text-xl sm:text-2xl md:text-3xl lg:text-4xl"
+                              : "text-lg sm:text-xl md:text-2xl lg:text-3xl"
+                          }`}
+                        >
+                          {event.title}
+                        </h2>
+                      </div>
+                    )}
 
                     {/* Content Overlay - ONLY VISIBLE FOR CENTER CARD WITH FADE IN */}
                     <AnimatePresence mode="wait">
