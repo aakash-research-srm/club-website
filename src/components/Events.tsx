@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
+import { eventsData } from "../data/events";
 
 export default function Events() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [windowWidth, setWindowWidth] = useState(0);
+  const router = useRouter();
 
   // Handle window resize for responsive behavior
   useEffect(() => {
@@ -25,40 +28,8 @@ export default function Events() {
     };
   }, []);
 
-  const events = [
-    {
-      title: "Hack & Beyond Hackathon",
-      date: "August 13, 2025",
-      description:
-        "24-hour hybrid hackathon with online idea pitching and on-campus prototyping. Theme: Electronics & IOT.",
-      gradient: "from-black via-gray-900 to-gray-800",
-      image: "/events/hack-n-beyond-1.jpg",
-    },
-    {
-      title: "Hack & Beyond Workshop",
-      date: "11-12 August 2025",
-      description:
-        "A 2-day hands-on workshop with industry experts to gear you up with tools, tech, and confidence to build real-world solutions. Venue: JC Bose Hall, SRMIST.",
-      gradient: "from-gray-900 via-black to-gray-800",
-      image: "/events/hack-n-beyond-2.jpg",
-    },
-    {
-      title: "Hack & Beyond Hackathon",
-      date: "August 13, 2025",
-      description:
-        "24-hour hybrid hackathon with online idea pitching and on-campus prototyping. Theme: Electronics & IOT.",
-      gradient: "from-gray-900 via-black to-gray-800",
-      image: "/events/hack-n-beyond-1.jpg",
-    },
-    {
-      title: "Hack & Beyond Workshop",
-      date: "11-12 August 2025",
-      description:
-        "A 2-day hands-on workshop with industry experts to gear you up with tools, tech, and confidence to build real-world solutions. Venue: JC Bose Hall, SRMIST.",
-      gradient: "from-gray-900 via-black to-gray-800",
-      image: "/events/hack-n-beyond-2.jpg",
-    },
-  ];
+  // Use events data from external file
+  const events = eventsData;
 
   // Auto-play functionality
   useEffect(() => {
@@ -116,6 +87,13 @@ export default function Events() {
       visibleEvents.push({ ...events[index], position: i });
     }
     return visibleEvents;
+  };
+
+  const handleEventClick = (eventId: string, position: number) => {
+    if (position === 0) {
+      // Only navigate if it's the center card
+      router.push(`/events/${eventId}`);
+    }
   };
 
   return (
@@ -186,11 +164,12 @@ export default function Events() {
                   <motion.div
                     className={`relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl transition-all duration-300 ${
                       event.position === 0
-                        ? "w-64 sm:w-72 md:w-80 lg:w-96 h-80 sm:h-88 md:h-96 lg:h-[480px]"
+                        ? "w-64 sm:w-72 md:w-80 lg:w-96 h-80 sm:h-88 md:h-96 lg:h-[480px] cursor-pointer"
                         : "w-48 sm:w-56 md:w-64 lg:w-80 h-64 sm:h-72 md:h-80 lg:h-96"
                     }`}
                     whileHover={event.position === 0 ? { scale: 1.02 } : {}}
                     transition={{ duration: 0.3 }}
+                    onClick={() => handleEventClick(event.id, event.position)}
                   >
                     {/* Background Image */}
                     <div
@@ -319,6 +298,16 @@ export default function Events() {
             </svg>
           </button>
         </div>
+      </div>
+
+      {/* View All Events Button */}
+      <div className="text-center mt-8">
+        <button
+          onClick={() => router.push('/events')}
+          className="bg-gradient-to-r from-white/20 to-white/10 hover:from-white/30 hover:to-white/20 text-white font-bold py-3 px-8 rounded-xl border border-white/20 transition-all duration-300 hover:scale-105 cursor-pointer"
+        >
+          View All Events
+        </button>
       </div>
 
       {/* Navigation Dots */}

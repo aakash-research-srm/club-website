@@ -20,8 +20,25 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    
+    // Create mailto URL with pre-filled content
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(
+      `Hi Aakash Research Labs Team,\n\n${formData.message}\n\nBest regards,\n${formData.name}\n${formData.email}`
+    );
+    
+    const mailtoUrl = `mailto:aakash.research.labs@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoUrl;
+    
+    // Optional: Reset form after submission
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
   };
 
   return (
