@@ -14,11 +14,11 @@ const LandingPage = () => {
 
       <Hero />
 
-      {/* Domains Section */}
-      <Domain />
-
       {/* Events Section */}
       <Events />
+
+      {/* Domains Section */}
+      <Domain />
 
       {/* Contact Section */}
       <Contact />

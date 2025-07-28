@@ -5,8 +5,8 @@ export default function Header() {
 
   const menuItems = [
     { id: "about-us", label: "ABOUT US" },
-    { id: "domains", label: "DOMAINS" },
     { id: "events", label: "EVENTS" },
+    { id: "domains", label: "DOMAINS" },
     // { id: "projects", label: "PROJECTS" },
     { id: "contact-us", label: "CONTACT US" },
   ];
