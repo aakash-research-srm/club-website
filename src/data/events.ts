@@ -90,6 +90,8 @@ export const eventsData: EventData[] = [
       "Misconduct or non-compliance with event rules",
       "Failure to build and submit within the given timeframe",
     ],
+    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSddbU6nOYOg-7r9UFiYMq_xl9_ohUm5N1-bywBAIFQmntYtyQ/viewform",
+    whatsappLink: "https://chat.whatsapp.com/KpcwQcK5GZp4yAbubnyMn8",
     contactInfo: [
       {
         name: "Tejasvin Kansal",
