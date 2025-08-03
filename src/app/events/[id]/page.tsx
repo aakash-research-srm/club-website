@@ -44,39 +44,6 @@ export default function EventDetailPage() {
         <div className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-85`} />
 
         
-       {/* Media Partner Box - Hardcoded */} 
-       {event.id === "hack-and-beyond-hackathon" && (
-  <div className="absolute top-6 right-6 z-20">
-    <a
-      href="https://eventopia.in/branding"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex flex-row items-center justify-between min-w-[300px] md:min-w-[380px] bg-white/10 backdrop-blur-sm rounded-xl p-3 pl-5 border border-white/20 hover:bg-white/20 transition-all duration-300"
-    >
-      <span className="text-white text-base md:text-lg font-semibold uppercase tracking-wider mr-4">
-        Media Partner
-      </span>
-      <img
-        src="/media/Eventopia-Logo-07.png"
-        alt="Eventopia - Media Partner"
-        className="
-          h-12 w-auto object-contain ml-2
-          filter brightness-75
-          transition
-          duration-300
-          ease-in-out
-          hover:scale-110
-          hover:brightness-60
-          active:scale-110
-          active:brightness-50
-          cursor-pointer
-        "
-      />
-    </a>
-  </div>
-)}
-
-
         
         {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
@@ -170,6 +137,39 @@ export default function EventDetailPage() {
               </div>
             </div>
           </div>
+
+          {/* Registration Section - Moved here */}
+          {(event.registrationLink || event.whatsappLink) && (
+            <div className="mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center">
+                Registration
+              </h2>
+              <div className="bg-gradient-to-br from-green-900/20 to-green-800/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-green-500/20">
+                <div className="space-y-4">
+                  {event.registrationLink && (
+                    <a
+                      href={event.registrationLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 text-center"
+                    >
+                      Register Now
+                    </a>
+                  )}
+                  {event.whatsappLink && (
+                    <a
+                      href={event.whatsappLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-gradient-to-r from-green-500 to-green-400 hover:from-green-600 hover:to-green-500 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 text-center"
+                    >
+                      Join WhatsApp Group
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Stages Section */}
           {event.stages && (
@@ -298,70 +298,67 @@ export default function EventDetailPage() {
             </div>
           )}
 
-          {/* Registration and Contact */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Registration */}
-            {(event.registrationLink || event.whatsappLink) && (
-              <div className="bg-gradient-to-br from-green-900/20 to-green-800/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-green-500/20">
-                <h3 className="text-2xl font-bold mb-6 text-white">Registration</h3>
+          {/* Contact Information and Media Partner */}
+          <div className="mb-16">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Contact Information */}
+              <div className="bg-gradient-to-br from-blue-900/20 to-blue-800/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-blue-500/20">
+                <h3 className="text-2xl font-bold mb-6 text-white">Contact Information</h3>
                 <div className="space-y-4">
-                  {event.registrationLink && (
-                    <a
-                      href={event.registrationLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 text-center"
-                    >
-                      Register Now
-                    </a>
+                  {event.contactInfo && event.contactInfo.map((contact, index) => (
+                    <div key={index}>
+                      <p className="text-white font-medium">{contact.name}</p>
+                      <a
+                        href={`tel:${contact.phone}`}
+                        className="text-blue-400 hover:text-blue-300 transition-colors"
+                      >
+                        {contact.phone}
+                      </a>
+                    </div>
+                  ))}
+                  {event.email && (
+                    <div>
+                      <p className="text-white font-medium">Email</p>
+                      <a
+                        href={`mailto:${event.email}`}
+                        className="text-blue-400 hover:text-blue-300 transition-colors"
+                      >
+                        {event.email}
+                      </a>
+                    </div>
                   )}
-                  {event.whatsappLink && (
-                    <a
-                      href={event.whatsappLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full bg-gradient-to-r from-green-500 to-green-400 hover:from-green-600 hover:to-green-500 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 text-center"
-                    >
-                      Join WhatsApp Group
-                    </a>
+                  {event.instagram && (
+                    <div>
+                      <p className="text-white font-medium">Instagram</p>
+                      <span className="text-blue-400">{event.instagram}</span>
+                    </div>
                   )}
                 </div>
               </div>
-            )}
 
-            {/* Contact Information */}
-            <div className="bg-gradient-to-br from-blue-900/20 to-blue-800/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-blue-500/20">
-              <h3 className="text-2xl font-bold mb-6 text-white">Contact Information</h3>
-              <div className="space-y-4">
-                {event.contactInfo && event.contactInfo.map((contact, index) => (
-                  <div key={index}>
-                    <p className="text-white font-medium">{contact.name}</p>
+              {/* Media Partner */}
+              {event.id === "hack-and-beyond-hackathon" && (
+                <div className="bg-gradient-to-br from-purple-900/20 to-purple-800/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-purple-500/20">
+                  <h3 className="text-2xl font-bold mb-6 text-white">Media Partner</h3>
+                  <div className="flex justify-center">
                     <a
-                      href={`tel:${contact.phone}`}
-                      className="text-blue-400 hover:text-blue-300 transition-colors"
+                      href="https://eventopia.in/branding"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
                     >
-                      {contact.phone}
+                      <img
+                        src="/media/Eventopia-Logo-07.png"
+                        alt="Eventopia - Media Partner"
+                        className="h-16 w-auto object-contain mb-4 filter brightness-75 transition duration-300 ease-in-out hover:brightness-60"
+                      />
+                      <span className="text-white text-lg font-semibold uppercase tracking-wider text-center">
+                        Eventopia
+                      </span>
                     </a>
                   </div>
-                ))}
-                {event.email && (
-                  <div>
-                    <p className="text-white font-medium">Email</p>
-                    <a
-                      href={`mailto:${event.email}`}
-                      className="text-blue-400 hover:text-blue-300 transition-colors"
-                    >
-                      {event.email}
-                    </a>
-                  </div>
-                )}
-                {event.instagram && (
-                  <div>
-                    <p className="text-white font-medium">Instagram</p>
-                    <span className="text-blue-400">{event.instagram}</span>
-                  </div>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </div>
 
