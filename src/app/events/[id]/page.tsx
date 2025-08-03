@@ -42,6 +42,41 @@ export default function EventDetailPage() {
         
         {/* Gradient Overlay */}
         <div className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-85`} />
+
+        
+       {/* Media Partner Box - Hardcoded */} 
+       {event.id === "hack-and-beyond-hackathon" && (
+  <div className="absolute top-6 right-6 z-20">
+    <a
+      href="https://eventopia.in/branding"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-row items-center justify-between min-w-[300px] md:min-w-[380px] bg-white/10 backdrop-blur-sm rounded-xl p-3 pl-5 border border-white/20 hover:bg-white/20 transition-all duration-300"
+    >
+      <span className="text-white text-base md:text-lg font-semibold uppercase tracking-wider mr-4">
+        Media Partner
+      </span>
+      <img
+        src="/media/Eventopia-Logo-07.png"
+        alt="Eventopia - Media Partner"
+        className="
+          h-12 w-auto object-contain ml-2
+          filter brightness-75
+          transition
+          duration-300
+          ease-in-out
+          hover:scale-110
+          hover:brightness-60
+          active:scale-110
+          active:brightness-50
+          cursor-pointer
+        "
+      />
+    </a>
+  </div>
+)}
+
+
         
         {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
