@@ -337,7 +337,6 @@ export default function EventDetailPage() {
               </div>
 
               {/* Media Partner */}
-              {event.id === "hack-and-beyond-hackathon" && (
                 <div className="bg-gradient-to-br from-purple-900/20 to-purple-800/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-purple-500/20">
                   <h3 className="text-2xl font-bold mb-6 text-white">Media Partner</h3>
                   <div className="flex justify-center">
@@ -358,7 +357,7 @@ export default function EventDetailPage() {
                     </a>
                   </div>
                 </div>
-              )}
+              
             </div>
           </div>
 
