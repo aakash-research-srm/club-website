@@ -49,7 +49,7 @@ export const eventsData: EventData[] = [
     title: "Hack & Beyond – 24-Hour Hybrid Hackathon",
     date: "August 13, 2025",
     description:
-      "24-hour hybrid hackathon with online idea pitching and on-campus prototyping. Theme: Electronics & IOT.",
+      "24-hour hybrid hackathon with online idea pitching and on-campus prototyping.\nTheme: IOT, Microprocessors & Open Innovation.",
     gradient: "from-black via-gray-900 to-gray-800",
     image: "/events/hack-n-beyond-1.jpg",
     organizer:
@@ -59,7 +59,7 @@ export const eventsData: EventData[] = [
     eligibility:
       "Open to all undergraduate and postgraduate students across India",
     teamSize: "1 – 3 members",
-    theme: "Electronics, IOT",
+    theme: "IOT, Microprocessors & Open Innovation",
     about:
       "Hack & Beyond is ARL's innovation showdown — a dynamic three-day tech sprint designed to empower the next generation of problem solvers. From idea to prototype, this hybrid hackathon challenges students to build solutions that make a difference in the real world. Get ready for a journey that begins online with idea pitching and culminates in a thrilling 24-hour offline hackathon at SRM Kattankulathur.",
     stages: [
@@ -67,7 +67,7 @@ export const eventsData: EventData[] = [
         title: "Round 1: Online Idea Screening",
         description:
           "Participants must submit a concise and compelling pitch highlighting the problem statement, proposed solution, tech stack, and expected impact. Top teams will be shortlisted for the final on-campus round.",
-        mode: "Online (via Unstop)",
+        mode: "Online",
         deliverable: "PPT (template will be provided)",
       },
       {
@@ -106,7 +106,7 @@ export const eventsData: EventData[] = [
     faq: [
       {
         question: "What is the theme of the hackathon?",
-        answer: "The theme for Hack & Beyond is Electronics & IOT. Participants are expected to develop solutions in these domains that address real-world problems."
+        answer: "The theme for Hack & Beyond Hackathon is IOT, Microprocessors & Open Innovation. Participants are expected to develop solutions in these domains that address real-world problems."
       },
       {
         question: "Can I participate alone or do I need a team?",
@@ -114,7 +114,7 @@ export const eventsData: EventData[] = [
       },
       {
         question: "Do I need to be physically present for the entire hackathon?",
-        answer: "The hackathon has 2 rounds - Round 1 is online (idea screening via Unstop), and only shortlisted teams need to be present for the 24-hour offline hackathon at SRMIST Kattankulathur campus."
+        answer: "The hackathon has 2 rounds - Round 1 is ONLINE, and only shortlisted teams need to be present for the 24-hour offline hackathon at SRMIST Kattankulathur campus."
       },
       {
         question: "What should I bring for the offline round?",
@@ -122,7 +122,7 @@ export const eventsData: EventData[] = [
       },
       {
         question: "Is there any registration fee for the hackathon?",
-        answer: "The hackathon itself is free to participate. However, if you want additional preparation, you can join our 2-day workshop (11-12 August) for ₹350 which includes hands-on training with industry experts."
+        answer: "The hackathon fee is ₹200 to participate. However, if you want additional preparation, you can join our 2-day workshop (11-12 August) for ₹350 which includes hands-on training with industry experts."
       }
     ],
   },
