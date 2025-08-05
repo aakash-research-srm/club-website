@@ -341,7 +341,7 @@ export default function EventDetailPage() {
                   <h3 className="text-2xl font-bold mb-6 text-white">Media Partner</h3>
                   <div className="flex justify-center">
                     <a
-                      href="https://eventopia.in/branding"
+                      href="https://eventopia.in/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
