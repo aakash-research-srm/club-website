@@ -92,7 +92,11 @@ export default function Events() {
   const handleEventClick = (eventId: string, position: number) => {
     if (position === 0) {
       // Only navigate if it's the center card
-      router.push(`/events/${eventId}`);
+      if (eventId === "logic-gates") {
+        router.push(`/logic-gates`);
+      } else {
+        router.push(`/events/${eventId}`);
+      }
     }
   };
 
@@ -244,7 +248,7 @@ export default function Events() {
                               transition={{ duration: 0.4, delay: 0.5 }}
                               className="text-white/70 leading-relaxed text-xs sm:text-sm md:text-base"
                             >
-                              {event.description}
+                              {event.description.split('\n')[0]} {/* Show only first line of description */}
                             </motion.p>
                           </div>
                         </motion.div>

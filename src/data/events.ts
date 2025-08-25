@@ -192,4 +192,37 @@ export const eventsData: EventData[] = [
       }
     ],
   },
+  {
+    id: "logic-gates",
+    title: "Logic Gates",
+    date: "Interactive Learning",
+    description: "Explore digital logic gates and their applications in computer science through interactive simulations and hands-on exercises.",
+    gradient: "from-blue-600/80 to-purple-600/80",
+    image: "/images/logic-gates.jpg",
+    organizer: "Interactive Learning Platform",
+    mode: "Online Interactive",
+    location: "Online Platform",
+    eligibility: "Open to all students and tech enthusiasts",
+    teamSize: "Individual learning",
+    about: "Dive deep into the fundamental building blocks of digital electronics and computer science. This interactive platform provides comprehensive learning materials, simulations, and practical exercises to master logic gates - from basic AND, OR, NOT gates to complex combinational and sequential circuits. Perfect for students, educators, and anyone interested in understanding how digital systems work at the most fundamental level.",
+    theme: "Digital Electronics & Computer Science Fundamentals",
+    faq: [
+      {
+        question: "What will I learn about logic gates?",
+        answer: "You'll learn about all fundamental logic gates (AND, OR, NOT, NAND, NOR, XOR, XNOR), how to combine them into complex circuits, truth tables, Boolean algebra, and practical applications in computer systems."
+      },
+      {
+        question: "Do I need any prior knowledge?",
+        answer: "No prior knowledge is required! The platform starts with basic concepts and gradually builds up to more complex topics. It's designed for beginners as well as those looking to refresh their knowledge."
+      },
+      {
+        question: "Are there interactive simulations?",
+        answer: "Yes! The platform features interactive circuit simulators where you can build, test, and experiment with different logic gate combinations in real-time."
+      },
+      {
+        question: "Can I use this for educational purposes?",
+        answer: "Absolutely! This platform is perfect for students, teachers, and anyone interested in learning or teaching digital electronics fundamentals."
+      }
+    ]
+  }
 ];
