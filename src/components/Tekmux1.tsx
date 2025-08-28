@@ -485,7 +485,6 @@ export default function LogicGatesGame() {
           ]
 
     let allCorrect = true
-    let failedCase = null
 
     for (const testCase of testCases) {
       // Calculate expected output based on challenge
@@ -553,7 +552,6 @@ export default function LogicGatesGame() {
 
       if (actualOutput !== expectedOutput) {
         allCorrect = false
-        failedCase = testCase
         break
       }
     }
@@ -646,7 +644,7 @@ export default function LogicGatesGame() {
           ].map((tab) => (
             <button
               key={tab.key}
-              onClick={() => setCurrentSection(tab.key as any)}
+              onClick={() => setCurrentSection(tab.key as typeof currentSection)}
               className={`px-10 py-6 rounded-2xl font-bold text-xl transition-all duration-300 hover:scale-105 ${
                 currentSection === tab.key
                   ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg"

@@ -2,8 +2,9 @@
 
 import React from "react";
 import { useParams, useRouter } from "next/navigation";
-import { eventsData, EventData } from "../../../data/events";
+import { eventsData } from "../../../data/events";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function EventDetailPage() {
   const params = useParams();
@@ -84,11 +85,12 @@ export default function EventDetailPage() {
               <div className="flex justify-center mb-8">
                 <div className="relative group w-full max-w-2xl">
                   <div className="overflow-hidden rounded-xl shadow-2xl">
-                    <img
+                    <Image
                       src={event.image}
                       alt={event.title}
                       className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-105 max-h-96 sm:max-h-[450px] md:max-h-[500px]"
                       loading="lazy"
+                      fill
                     />
                   </div>
                   {/* Optional subtle overlay on hover */}
@@ -346,10 +348,11 @@ export default function EventDetailPage() {
                       rel="noopener noreferrer"
                       className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
                     >
-                      <img
+                      <Image
                         src="/media/Eventopia-Logo-07.png"
                         alt="Eventopia - Media Partner"
                         className="h-16 w-auto object-contain mb-4 filter brightness-75 transition duration-300 ease-in-out hover:brightness-60"
+                        fill
                       />
                       <span className="text-white text-lg font-semibold uppercase tracking-wider text-center">
                         Eventopia
